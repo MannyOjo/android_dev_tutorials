@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import java.lang.Math;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
         EditText amountToBeConverted = (EditText) findViewById(R.id.amountToBeConverted);
         double amount = Double.parseDouble(amountToBeConverted.getText().toString());
         double dollarAmount = amount*0.0028;
-        Toast.makeText(this, String.valueOf(dollarAmount),Toast.LENGTH_LONG).show();
+        String finalAmount = String.valueOf(Math.round(dollarAmount*100.00)/100.00);
+        Toast.makeText(this, "$"+finalAmount ,Toast.LENGTH_LONG).show();
     }
 
 
